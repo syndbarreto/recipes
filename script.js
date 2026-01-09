@@ -31,7 +31,16 @@ const receitas = [
     tempo: 90,
     tipo: "principal",
     imagem: "https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg"
+  },
+  {
+    id: 5,
+    titulo: "Pão de Queijo Mineiro",
+    dificuldade: "medio",
+    tempo: 50,
+    tipo: "entrada",
+    imagem: "https://www.receiteria.com.br/wp-content/uploads/2018/09/pao-de-queijo-mineiro.jpg"
   }
+
 ];
 
 const recipesGrid = document.getElementById("recipesGrid");
