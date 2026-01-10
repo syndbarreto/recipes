@@ -1,3 +1,5 @@
+/* RESET / BASE APP */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +70,11 @@ body {
   background-color: #e5e7eb;
 }
 
+.header-right {
+  display: flex;
+  gap: 8px;
+}
+
 .header-right .btn {
   display: inline-flex;
   align-items: center;
@@ -81,7 +88,25 @@ body {
   font-weight: 500;
 }
 
-/* HERO */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+/* HERO (APENAS NA PÁGINA DE RECEITAS) */
 
 .hero {
   background: linear-gradient(135deg, #3c1e3f, #d84f80);
@@ -224,6 +249,37 @@ body {
   color: #6b7280;
 }
 
+/* BOTÃO LIKE */
+
+.like-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.24);
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.like-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28);
+}
+
+.like-btn.liked {
+  background: #3c1e3f;
+  color: #ffffff;
+}
+
 /* BADGE DIFICULDADE */
 
 .badge {
@@ -237,25 +293,71 @@ body {
   border: 1px solid;
 }
 
-/* fácil – verde */
 .badge.facil {
   border-color: #7bae7f;
   color: #5b8a60;
   background: #e6f4e6;
 }
 
-/* médio – laranja */
 .badge.medio {
   border-color: #d58936;
   color: #b26e2e;
   background: #f9e9d0;
 }
 
-/* difícil – vermelho/vinho */
 .badge.dificil {
   border-color: #b4001e;
   color: #990018;
   background: #fde4e7;
+}
+
+/* PERFIL */
+
+.profile-main {
+  padding: 24px 40px 40px;
+}
+
+.profile-header {
+  margin-bottom: 24px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.profile-card h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.profile-favorites h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.profile-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.profile-empty {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 8px;
 }
 
 /* RESPONSIVO */
@@ -283,7 +385,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .recipes-section {
+  .recipes-section,
+  .profile-main {
     padding: 24px 16px 32px;
   }
 
@@ -294,6 +397,174 @@ body {
 
 @media (max-width: 480px) {
   .recipes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MODAL / POP-UP RECEITA */
+
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  cursor:pointer;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+  overflow: hidden;
+  max-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.modal-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content {
+  padding: 24px 28px 28px;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+/* badges de info */
+
+.modal-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.badge-label {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.modal-badge span:last-child {
+  font-weight: 600;
+}
+
+/* colunas ingredientes / preparo */
+
+.modal-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.modal-column h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.modal-column ul,
+.modal-column ol {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* comentários */
+
+.modal-comments {
+  margin-top: 24px;
+}
+
+.modal-comments h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.modal-login-alert {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #e5f0ff;
+  color: #1d4ed8;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.comment-card {
+  border-radius: 18px;
+  background: #f9fafb;
+  padding: 12px 14px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVO MODAL */
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 16px;
+    max-height: calc(100vh - 32px);
+  }
+
+  .modal-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-columns {
     grid-template-columns: 1fr;
   }
 }

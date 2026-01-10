@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saborify – Perfil</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+  <div class="header-left">
+    <div class="logo-icon">🍽️</div>
+    <span class="logo-text">Saborify</span>
+  </div>
+
+  <nav class="header-nav">
+    <a href="receitas.html" class="nav-link active">Receitas</a>
+  </nav>
+
+  <div class="header-right">
+    <button id="profileButton" class="btn btn-outline">Entrar</button>
+    <button id="logoutButton" class="btn btn-secondary" style="display:none;">Sair</button>
+  </div>
+</header>
+
+  <main class="profile-main">
+    <!-- INFO DO UTILIZADOR -->
+    <section class="profile-header">
+      <div class="profile-card">
+        <h1>O teu perfil</h1>
+        <div class="profile-info">
+          <p><span class="profile-label">Nome:</span> <span id="profileName">—</span></p>
+          <p><span class="profile-label">Email:</span> <span id="profileEmail">—</span></p>
+          <p><span class="profile-label">Tipo de conta:</span> <span id="profileRole">—</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAVORITOS -->
+    <section class="profile-favorites">
+      <h2>Receitas favoritas</h2>
+
+      <div id="favoritesGrid" class="recipes-grid">
+        <!-- cards de receitas favoritas gerados pelo perfil.js -->
+      </div>
+
+      <p id="noFavoritesMessage" class="profile-empty" style="display:none;">
+        Ainda não tens receitas favoritas. Vai à página de receitas e clica no coração 💚 para guardar.
+      </p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    // página protegida
+    protegerPagina();
+    atualizarUIUsuario();
+  </script>
+  <script src="script.js"></script>
+  <script src="perfil.js"></script>
+</body>
+</html>

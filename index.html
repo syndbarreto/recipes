@@ -2,92 +2,223 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
-  <title>Receitas</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Saborify – Descobre receitas incríveis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="landing.css" />
 </head>
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-left">
+<body class="landing-body">
+  <!-- HEADER LANDING -->
+  <header class="landing-header">
+    <div class="landing-logo">
+      <span class="logo-icon">🍽️</span>
       <span class="logo-text">Saborify</span>
     </div>
 
-    <nav class="header-nav">
-      <a href="index.html" class="nav-link active">Receitas</a>
-      <a href="#" class="nav-link">Categorias</a>
+    <nav class="landing-nav">
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#nossas-receitas">Nossas Receitas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#login" class="landing-login-link">Entrar</a>
     </nav>
-
-    <div class="header-right">
-      <button class="btn btn-outline">
-        Entrar
-      </button>
-    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Receitas Deliciosas e Fáceis</h1>
-      <p>Descubra receitas práticas e saborosas para o seu dia a dia</p>
+  <main>
+    <!-- HERO + MURAL + LOGIN (primeira dobra) -->
+    <section class="landing-main" id="top">
+      <!-- Lado esquerdo: texto principal -->
+      <section class="landing-content">
+        <h1>Descobre a tua próxima receita favorita.</h1>
 
-      <div class="hero-search">
-        <span class="search-icon">🔍</span>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Buscar receitas..."
-        />
+        <p class="landing-subtitle">
+          O Saborify é o teu mural de inspiração culinária: explora receitas, guarda favoritas
+          e organiza o que realmente tens vontade de cozinhar.
+        </p>
+
+        <ul class="landing-features">
+          <li>🔎 Pesquisa com filtros por tipo de prato, dificuldade e tempo.</li>
+          <li>💚 Guarda receitas nos favoritos com um só clique.</li>
+          <li>👤 Perfil com a tua lista de receitas favoritas.</li>
+          <li>👨‍🍳 Modo administrador para gerir o catálogo de receitas.</li>
+        </ul>
+      </section>
+
+      <!-- Lado direito: “mural” + cartão de login -->
+      <section class="landing-auth">
+        <!-- grade tipo Pinterest com imagens de comida -->
+        <div class="landing-masonry">
+          <div class="land-card land-card-tall">
+            <img src="https://www.aromaticasvivas.com/imgs/receitas/nelson_ribeiro_frango_ervas_arom_ticas.png" alt="Frango assado" />
+          </div>
+          <div class="land-card">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Salada colorida" />
+          </div>
+          <div class="land-card">
+            <img src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg" alt="Lasanha" />
+          </div>
+          <div class="land-card land-card-wide">
+            <img src="https://i.pinimg.com/1200x/97/82/73/9782739fb224aa9d7692372f0f9a120e.jpg" alt="Mulher comendo sanduiche" />
+          </div>
+        </div>
+
+        <!-- cartão de login -->
+        <div class="landing-login-card" id="login">
+          <h2>Entrar no Saborify</h2>
+          <p>Usa uma das contas de teste para iniciar sessão.</p>
+
+          <form id="loginForm" class="login-form">
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="ex: admin@receitas.com"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="********"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn-full">Entrar</button>
+
+            <p class="login-hint">
+              Admin: <code>admin@receitas.com</code> / <code>admin123</code><br />
+              Utilizador: <code>user@receitas.com</code> / <code>user123</code>
+            </p>
+
+            <p id="loginError" class="login-error" style="display: none;">
+              Email ou password inválidos.
+            </p>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <!-- SECTION: COMO FUNCIONA -->
+    <section class="lp-section lp-section-light" id="nossas-receitas">
+      <div class="lp-section-inner">
+        <h2>Como o Saborify funciona</h2>
+        <p class="lp-section-subtitle">
+          Em poucos passos, tens o teu painel de receitas organizado e pronto para usar.
+        </p>
+
+        <div class="lp-steps">
+          <div class="lp-step">
+            <span class="lp-step-number">1</span>
+            <h3>Explora receitas</h3>
+            <p>
+              Usa os filtros por tipo de prato, dificuldade e tempo para encontrar a receita ideal
+              para cada momento.
+            </p>
+          </div>
+          <div class="lp-step">
+            <span class="lp-step-number">2</span>
+            <h3>Guarda as tuas favoritas</h3>
+            <p>
+              Clica no coração 💚 nos cards para criar automaticamente a tua lista de receitas favoritas.
+            </p>
+          </div>
+          <div class="lp-step">
+            <span class="lp-step-number">3</span>
+            <h3>Consulta o teu perfil</h3>
+            <p>
+              Acede ao perfil para rever rapidamente as receitas que mais gostas, tudo no mesmo sítio.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FILTROS -->
-  <section class="filters">
-    <div class="filters-inner">
-      <div class="filter-group">
-        <label for="tipoPrato">Tipo de Prato</label>
-        <select id="tipoPrato">
-          <option value="">Todos os tipos</option>
-          <option value="entrada">Entrada</option>
-          <option value="principal">Prato principal</option>
-          <option value="sobremesa">Sobremesa</option>
-        </select>
+    <!-- SECTION: FUNCIONALIDADES EM DETALHE -->
+    <section class="lp-section" id="funcionalidades">
+      <div class="lp-section-inner lp-two-columns">
+        <div>
+          <h2>Todas as funcionalidades num só lugar</h2>
+          <p class="lp-section-subtitle">
+            O Saborify foi pensado como um laboratório de receitas para o teu dia a dia,
+            mas também como um projeto académico completo.
+          </p>
+
+          <ul class="lp-feature-list">
+            <li>✅ Catálogo de receitas com imagens, tempo e tipo de prato.</li>
+            <li>✅ Filtros dinâmicos por categoria, dificuldade e duração.</li>
+            <li>✅ Sistema de favoritos baseado em JSON de receitas.</li>
+            <li>✅ Login com utilizador comum e conta de administrador.</li>
+            <li>✅ Página de perfil com informações do utilizador e receitas favoritas.</li>
+          </ul>
+        </div>
+
+        <div class="lp-feature-card">
+          <h3>Modo administrador</h3>
+          <p>
+            Ao entrar como <strong>Admin</strong>, tens acesso a funcionalidades extra para gestão
+            do catálogo de receitas, ideais para demonstrar o lado de backoffice do projeto.
+          </p>
+          <p class="lp-feature-note">
+            Todas estas interações são feitas apenas no front-end, usando arrays de objetos em JavaScript
+            para simular dados guardados.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="filter-group">
-        <label for="dificuldade">Dificuldade</label>
-        <select id="dificuldade">
-          <option value="">Todas</option>
-          <option value="facil">Fácil</option>
-          <option value="medio">Médio</option>
-          <option value="dificil">Difícil</option>
-        </select>
+    <!-- SECTION: CTA FINAL -->
+    <section class="lp-section lp-section-dark" id="cta-final">
+      <div class="lp-section-inner lp-section-center">
+        <h2>Pronto para cozinhar com o Saborify?</h2>
+        <p class="lp-section-subtitle">
+          Faz login com uma das contas de teste e explora o catálogo de receitas, filtros, favoritos e
+          o teu perfil personalizado.
+        </p>
+        <button
+          class="btn-full lp-cta-button"
+          type="button"
+          onclick="document.getElementById('email').focus()"
+        >
+          Começar agora
+        </button>
+        <p class="lp-small-note">
+          Não precisas de criar conta real – o login é simulado apenas para fins de demonstração do projeto.
+        </p>
       </div>
-
-      <div class="filter-group">
-        <label for="tempoMaximo">Tempo Máximo</label>
-        <select id="tempoMaximo">
-          <option value="">Qualquer tempo</option>
-          <option value="15">Até 15 min</option>
-          <option value="30">Até 30 min</option>
-          <option value="60">Até 1 hora</option>
-          <option value="120">Até 2 horas</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- LISTA DE RECEITAS -->
-  <main class="recipes-section">
-    <div class="recipes-header">
-      <span>Mostrando <span id="recipesCount">0</span> receitas</span>
-    </div>
-
-    <div id="recipesGrid" class="recipes-grid">
-      <!-- Cards gerados via JS -->
-    </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer id="sobre" class="landing-footer">
+    <p>Saborify · O melhor para a tua cozinha</p>
+  </footer>
+
+  <!-- JS: auth + lógica do formulário de login -->
+  <script src="auth.js"></script>
+  <script>
+    // Se já estiver logado, vai direto para a página de receitas
+    carregarUtilizador();
+    if (typeof utilizadorAtual !== "undefined" && utilizadorAtual) {
+      window.location.href = "receitas.html";
+    }
+
+    const form = document.getElementById("loginForm");
+    const errorEl = document.getElementById("loginError");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const ok = loginComCredenciais(email, password);
+      if (!ok) {
+        errorEl.style.display = "block";
+      } else {
+        errorEl.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Saborify – Receitas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-icon">🍽️</div>
+        <span class="logo-text">Saborify</span>
+      </div>
+
+      <nav class="header-nav">
+        <a href="receitas.html" class="nav-link active">Receitas</a>
+      </nav>
+
+      <div class="header-right">
+        <button id="profileButton" class="btn btn-outline">Entrar</button>
+        <button
+          id="logoutButton"
+          class="btn btn-secondary"
+          style="display: none"
+        >
+          Sair
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Receitas deliciosas e fáceis</h1>
+        <p>Descobre receitas práticas e saborosas para o teu dia a dia.</p>
+
+        <div class="hero-search">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar receitas..."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters">
+      <div class="filters-inner">
+        <div class="filter-group">
+          <label for="tipoPrato">Tipo de Prato</label>
+          <select id="tipoPrato">
+            <option value="">Todos os tipos</option>
+            <option value="entrada">Entrada</option>
+            <option value="principal">Prato principal</option>
+            <option value="sobremesa">Sobremesa</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="dificuldade">Dificuldade</label>
+          <select id="dificuldade">
+            <option value="">Todas</option>
+            <option value="facil">Fácil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="tempoMaximo">Tempo Máximo</label>
+          <select id="tempoMaximo">
+            <option value="">Qualquer tempo</option>
+            <option value="15">Até 15 min</option>
+            <option value="30">Até 30 min</option>
+            <option value="60">Até 1 hora</option>
+            <option value="120">Até 2 horas</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA DE RECEITAS -->
+    <main class="recipes-section">
+      <div class="recipes-header">
+        <span>Mostrando <span id="recipesCount">0</span> receitas</span>
+      </div>
+
+      <div id="recipesGrid" class="recipes-grid">
+        <!-- Cards gerados pelo script.js -->
+      </div>
+    </main>
+
+    <!-- MODAL DE RECEITA -->
+<div id="recipeModal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Fechar">✕</button>
+
+    <div class="modal-header-image" id="modalImageWrapper">
+      <img id="modalImage" src="" alt="">
+    </div>
+
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+
+      <div class="modal-badges">
+        <div class="modal-badge">
+          <span class="meta-icon">⏱</span>
+          <div>
+            <span class="badge-label">Tempo de preparo</span>
+            <span id="modalTempo"></span>
+          </div>
+        </div>
+        <div class="modal-badge">
+          <span class="meta-icon">🍳</span>
+          <div>
+            <span class="badge-label">Dificuldade</span>
+            <span id="modalDificuldade"></span>
+          </div>
+        </div>
+        <div class="modal-badge">
+          <span class="meta-icon">⭐</span>
+          <div>
+            <span class="badge-label">Avaliação</span>
+            <span id="modalAvaliacao"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-columns">
+        <div class="modal-column">
+          <h3>Ingredientes</h3>
+          <ul id="modalIngredientes"></ul>
+        </div>
+        <div class="modal-column">
+          <h3>Modo de preparo</h3>
+          <ol id="modalModoPreparo"></ol>
+        </div>
+      </div>
+
+      <section class="modal-comments">
+        <h3>Avaliações e comentários</h3>
+        <div class="modal-login-alert">
+          Faça login para avaliar e comentar nesta receita.
+        </div>
+        <div id="modalComentarios"></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+    <script src="auth.js"></script>
+    <script>
+      // esta página exige login
+      protegerPagina();
+      atualizarUIUsuario();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
