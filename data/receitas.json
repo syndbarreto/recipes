@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "titulo": "Frango Assado com Ervas",
+    "dificuldade": "facil",
+    "tempo": 60,
+    "tipo": "principal",
+    "imagem": "https://i.panelinha.com.br/i1/bk-7568-mgl7602.webp",
+    "descricao": "Frango assado suculento com ervas aromáticas.",
+    "ingredientes": [
+      "1 frango inteiro",
+      "2 colheres de sopa de azeite",
+      "Ervas frescas (alecrim, tomilho, salsa)",
+      "Sal e pimenta a gosto"
+    ],
+    "modoPreparo": [
+      "Pré-aqueça o forno a 200°C.",
+      "Tempere o frango com sal, pimenta, azeite e ervas.",
+      "Leve ao forno por cerca de 60 minutos ou até dourar."
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Brownie de Chocolate",
+    "dificuldade": "medio",
+    "tempo": 40,
+    "tipo": "sobremesa",
+    "imagem": "https://feed.continente.pt/media/2xfnxmki/brownie-chocolate.jpg?anchor=center&mode=crop&width=826&height=620&rnd=133761624161770000&format=webp",
+    "descricao": "Brownie bem chocolatudo, fofinho por dentro.",
+    "ingredientes": [
+      "200 g de chocolate",
+      "3 ovos",
+      "1 chávena de açúcar",
+      "1/2 chávena de farinha"
+    ],
+    "modoPreparo": [
+      "Derreta o chocolate.",
+      "Misture com os ovos e o açúcar.",
+      "Adicione a farinha e leve ao forno por 30-40 minutos."
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Salada Caesar",
+    "dificuldade": "facil",
+    "tempo": 20,
+    "tipo": "entrada",
+    "imagem": "https://i.pinimg.com/736x/f9/be/a1/f9bea17b6ace81729c5183fe4793c44b.jpg",
+    "descricao": "Salada clássica com alface, croutons e molho Caesar.",
+    "ingredientes": [
+      "1 alface romana",
+      "Croutons",
+      "Queijo parmesão ralado",
+      "Molho Caesar"
+    ],
+    "modoPreparo": [
+      "Lave e rasgue a alface.",
+      "Adicione os croutons e o queijo.",
+      "Regue com o molho Caesar e misture."
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Francesinha",
+    "dificuldade": "dificil",
+    "tempo": 90,
+    "tipo": "principal",
+    "imagem": "https://i.pinimg.com/1200x/ec/f5/bb/ecf5bb5e272dfe053ce56d757b251b1c.jpg",
+    "descricao": "Sanduíche tradicional português com carnes e molho especial.",
+    "ingredientes": [
+      "Pão de forma",
+      "Bife de carne",
+      "Presunto",
+      "Salsicha",
+      "Queijo",
+      "Molho especial"
+    ],
+    "modoPreparo": [
+      "Monte o sanduíche com as carnes e o queijo.",
+      "Cubra com o molho especial.",
+      "Leve ao forno para gratinar o queijo."
+    ]
+  }
+]
