@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saborify - Entrar</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body class="login-page">
+
+  <!-- LOGO + TAGLINE -->
+  <div class="login-header">
+    <span class="logo-text">Saborify</span>
+    <p class="tagline">Receitas deliciosas ao seu alcance</p>
+  </div>
+
+  <!-- SECTION 1: HERO -->
+  <section class="hero hero-login">
+    <div class="hero-content">
+      <h1>Organize, descubra e guarde as suas receitas</h1>
+      <p class="hero-desc">
+        Explore o catálogo, adicione as suas próprias receitas ou guarde as favoritas.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FUNCIONALIDADES -->
+  <section class="features-section">
+    <h2>O que você pode fazer</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Explorar Receitas</h3>
+        <p>Filtre por tipo, dificuldade e tempo.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Criar Receitas</h3>
+        <p>Adicione e edite receitas (admins).</p>
+      </div>
+      <div class="feature-card">
+        <h3>Favoritar Receitas</h3>
+        <p>Guarde tudo que gosta no seu perfil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: LOGIN -->
+  <section class="login-section">
+    <div class="login-left">
+      <h2>Faça login</h2>
+      <p class="demo-tip">Use uma conta de demonstração:</p>
+      <ul class="demo-list">
+        <li><b>Utilizador:</b> user@saborify.com / <code>123456</code></li>
+        <li><b>Admin:</b> admin@saborify.com / <code>admin123</code></li>
+      </ul>
+    </div>
+
+    <div class="login-box">
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" id="password" required />
+        </div>
+
+        <button type="submit" class="btn">Entrar</button>
+        <p id="loginErro" class="login-erro"></p>
+      </form>
+    </div>
+  </section>
+
+  <script src="login.js"></script>
+</body>
+</html>

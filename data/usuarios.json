@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "nome": "Suzi James",
+    "email": "user@saborify.com",
+    "senha": "123456",
+    "perfil": "usuario",
+    "foto": "https://via.placeholder.com/80?text=User",
+    "bio": "Cozinho por diversão e adoro testar receitas fáceis.",
+    "favoritos": [2, 4],
+    "receitasCriadas": []
+  },
+  {
+    "id": 2,
+    "nome": "Admin Saborify",
+    "email": "admin@saborify.com",
+    "senha": "admin123",
+    "perfil": "admin",
+    "foto": "https://via.placeholder.com/80?text=Admin",
+    "bio": "Admin do Saborify: acompanho e aprovo as melhores receitas da comunidade.",
+    "favoritos": [1,3],
+    "receitasCriadas": []
+  }
+]

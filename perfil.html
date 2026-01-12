@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <title>Perfil - Saborify</title>
+  <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body class="profile-page">
+  <main class="profile-container">
+    <a href="index.html" class="back-link" aria-label="Voltar para a página inicial">← Voltar</a>
+    <!-- CABEÇALHO DO PERFIL -->
+    <section class="profile-header">
+      <img id="profileFoto" class="profile-avatar" src="" alt="Foto de perfil" />
+
+      <h1 id="profileNome" class="profile-name">Nome do usuário</h1>
+      <p id="profileBio" class="profile-bio">nothing here</p>
+      <p id="profileHandle" class="profile-handle">@usuario</p>
+
+      
+    </section>
+
+    <!-- TABS -->
+    <section class="profile-tabs">
+      <button class="tab-btn active" data-tab="favoritas">
+        Receitas favoritas
+      </button>
+      <button class="tab-btn" data-tab="criadas">
+        Receitas criadas
+      </button>
+    </section>
+
+    <!-- CONTEÚDO DAS TABS -->
+    <section class="profile-content">
+
+      <!-- FAVORITAS -->
+      <div id="tabFavoritas" class="tab-panel active">
+        <h2 class="tab-title">Receitas favoritas</h2>
+        <p class="tab-subtitle">
+          Todas as receitas que você marcou com o coração.
+        </p>
+
+        <div id="favoritasGrid" class="recipes-list">
+          <!-- Cards via JS -->
+        </div>
+
+        <p id="favoritasVazio" class="empty-message hidden">
+          Você ainda não favoritou nenhuma receita.
+        </p>
+      </div>
+
+      <!-- CRIADAS -->
+      <div id="tabCriadas" class="tab-panel">
+        <h2 class="tab-title">Receitas criadas</h2>
+        <p class="tab-subtitle">
+          Receitas que você adicionou ao Saborify.
+        </p>
+
+        <div id="criadasGrid" class="recipes-list">
+          <!-- Cards via JS -->
+        </div>
+
+        <p id="criadasVazio" class="empty-message hidden">
+          Você ainda não criou nenhuma receita.
+          <br />
+          Vá à página principal e clique em
+          <strong>Criar nova receita</strong> para começar.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="perfil.js"></script>
+</body>
+</html>

@@ -1,93 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head>
-  <meta charset="UTF-8" />
-  <title>Receitas</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-left">
-      <span class="logo-text">Saborify</span>
-    </div>
-
-    <nav class="header-nav">
-      <a href="index.html" class="nav-link active">Receitas</a>
-      <a href="#" class="nav-link">Categorias</a>
-    </nav>
-
-    <div class="header-right">
-      <button class="btn btn-outline">
-        Entrar
-      </button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Receitas Deliciosas e Fáceis</h1>
-      <p>Descubra receitas práticas e saborosas para o seu dia a dia</p>
-
-      <div class="hero-search">
-        <span class="search-icon">🔍</span>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Buscar receitas..."
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- FILTROS -->
-  <section class="filters">
-    <div class="filters-inner">
-      <div class="filter-group">
-        <label for="tipoPrato">Tipo de Prato</label>
-        <select id="tipoPrato">
-          <option value="">Todos os tipos</option>
-          <option value="entrada">Entrada</option>
-          <option value="principal">Prato principal</option>
-          <option value="sobremesa">Sobremesa</option>
-        </select>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Receitas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo-text">Saborify</span>
       </div>
 
-      <div class="filter-group">
-        <label for="dificuldade">Dificuldade</label>
-        <select id="dificuldade">
-          <option value="">Todas</option>
-          <option value="facil">Fácil</option>
-          <option value="medio">Médio</option>
-          <option value="dificil">Difícil</option>
-        </select>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Receitas</a>
+        <a href="#" class="nav-link" id="linkCriarReceita"
+          >Criar nova receita</a
+        >
+        <a href="perfil.html?id=1" class="nav-link" id="linkPerfil">Perfil</a>
+      </nav>
+
+      <div class="header-right">
+        <button class="btn btn-outline" id="btnLogout">Logout</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Receitas Deliciosas e Fáceis</h1>
+        <p>Descubra receitas práticas e saborosas para o seu dia a dia</p>
+
+        <div class="hero-search">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar receitas..."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters">
+      <div class="filters-inner">
+        <div class="filter-group">
+          <label for="tipoPrato">Tipo de Prato</label>
+          <select id="tipoPrato">
+            <option value="">Todos os tipos</option>
+            <option value="entrada">Entrada</option>
+            <option value="principal">Prato principal</option>
+            <option value="sobremesa">Sobremesa</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="dificuldade">Dificuldade</label>
+          <select id="dificuldade">
+            <option value="">Todas</option>
+            <option value="facil">Fácil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="tempoMaximo">Tempo Máximo</label>
+          <select id="tempoMaximo">
+            <option value="">Qualquer tempo</option>
+            <option value="15">Até 15 min</option>
+            <option value="30">Até 30 min</option>
+            <option value="60">Até 1 hora</option>
+            <option value="120">Até 2 horas</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA DE RECEITAS -->
+    <main class="recipes-section">
+      <div class="recipes-header">
+        <span>Mostrando <span id="recipesCount">0</span> receitas</span>
       </div>
 
-      <div class="filter-group">
-        <label for="tempoMaximo">Tempo Máximo</label>
-        <select id="tempoMaximo">
-          <option value="">Qualquer tempo</option>
-          <option value="15">Até 15 min</option>
-          <option value="30">Até 30 min</option>
-          <option value="60">Até 1 hora</option>
-          <option value="120">Até 2 horas</option>
-        </select>
+      <div id="recipesGrid" class="recipes-grid">
+        <!-- Cards gerados via JS -->
+      </div>
+    </main>
+
+
+      <!-- MODAL DE DETALHE DA RECEITA -->
+  <div id="recipeModal" class="modal hidden">
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+
+      <div class="modal-header">
+        <img id="modalImage" src="" alt="" class="modal-image" />
+        <div class="modal-header-text">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescricao" class="modal-descricao"></p>
+
+          <div class="modal-tags">
+            <div class="tag-info">
+              <span class="tag-label">Tempo de preparo</span>
+              <span id="modalTempo" class="tag-value"></span>
+            </div>
+            <div class="tag-info">
+              <span class="tag-label">Dificuldade</span>
+              <span id="modalDificuldade" class="tag-value"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-columns">
+          <div>
+            <h3 class="modal-section-title ingredientes-title">Ingredientes</h3>
+            <ul id="modalIngredientes" class="ingredientes-list"></ul>
+          </div>
+          <div>
+            <h3 class="modal-section-title preparo-title">Modo de Preparo</h3>
+            <ol id="modalPreparo" class="preparo-list"></ol>
+          </div>
+        </div>
+
+        <div class="modal-feedback">
+          <h3 class="modal-section-title">Avaliação & Comentários</h3>
+          <div class="rating">
+            <label>Dar nota:</label>
+            <select id="modalRating">
+              <option value="">Selecione...</option>
+              <option value="1">1 estrela</option>
+              <option value="2">2 estrelas</option>
+              <option value="3">3 estrelas</option>
+              <option value="4">4 estrelas</option>
+              <option value="5">5 estrelas</option>
+            </select>
+          </div>
+          <textarea id="modalComentario" placeholder="Escreva um comentário..."></textarea>
+          <button id="modalEnviarFeedback" class="btn">Enviar</button>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- LISTA DE RECEITAS -->
-  <main class="recipes-section">
-    <div class="recipes-header">
-      <span>Mostrando <span id="recipesCount">0</span> receitas</span>
-    </div>
-
-    <div id="recipesGrid" class="recipes-grid">
-      <!-- Cards gerados via JS -->
-    </div>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
+</html>
+
+    <script src="script.js"></script>
+  </body>
 </html>
