@@ -2,29 +2,31 @@
 <html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Receitas</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="login.css">
   </head>
   <body>
     <!-- HEADER -->
-    <header class="header">
-      <div class="header-left">
-        <span class="logo-text">Saborify</span>
-      </div>
+     <header class="header">
+  <div class="header-left">
+    <span class="logo-text">Saborify</span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+  </div>
 
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link active">Receitas</a>
-        <a href="#" class="nav-link" id="linkCriarReceita"
-          >Criar nova receita</a
-        >
-        <a href="perfil.html?id=1" class="nav-link" id="linkPerfil">Perfil</a>
-      </nav>
+  <nav class="header-nav" id="siteNav">
+    <a href="index.html" class="nav-link active">Receitas</a>
+    <a href="pages/criar/criar.html" class="nav-link" id="linkCriarReceita">Criar nova receita</a>
+    <a href="pages/perfil/perfil.html" class="nav-link" id="linkPerfil">Perfil</a>
+    <a href="pages/admin/admin.html" class="nav-link" id="linkAdmin">Gerir receitas</a>
+  </nav>
 
-      <div class="header-right">
-        <button class="btn btn-outline" id="btnLogout">Logout</button>
-      </div>
-    </header>
+  <div class="header-right">
+    <button class="btn btn-outline" id="btnLogout">Logout</button>
+  </div>
+</header>
 
     <!-- HERO -->
     <section class="hero">
@@ -149,10 +151,7 @@
     </div>
   </div>
 
+  <script src="utils.js"></script>
   <script src="script.js"></script>
-</body>
-</html>
-
-    <script src="script.js"></script>
   </body>
 </html>

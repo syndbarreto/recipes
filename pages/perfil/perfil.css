@@ -1,0 +1,114 @@
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.profile-page {
+  background: #fafafa;
+  color: #111827;
+}
+
+.profile-container {
+  max-width: 960px;
+  margin: 40px auto 60px;
+  padding: 0 16px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.profile-avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.profile-bio {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.profile-handle {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  padding: 0 8px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  padding: 6px 4px;
+  cursor: pointer;
+  color: #6b7280;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 999px;
+  background: #111827;
+}
+
+.profile-content { margin-top: 16px; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.tab-title { font-size: 18px; margin-bottom: 4px; }
+
+.tab-subtitle { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.profile-recipe-card { background: #ffffff; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); display: flex; flex-direction: column; }
+.profile-recipe-image { width: 100%; height: 140px; object-fit: cover; }
+.profile-recipe-body { padding: 10px 12px 12px; }
+.profile-recipe-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.profile-recipe-meta { font-size: 13px; color: #6b7280; }
+
+.empty-message { margin-top: 24px; text-align: center; font-size: 14px; color: #6b7280; }
+.empty-message.hidden { display: none; }
+
+@media (max-width: 640px) {
+  .profile-container { margin-top: 24px; }
+}
