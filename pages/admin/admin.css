@@ -1,0 +1,35 @@
+.admin-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 2px 0 2px;
+}
+
+.admin-subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.section-title {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #374151;
+  margin: 8px 0 12px;
+}
+
+#adminList {
+  margin-bottom: 8px;
+}
+
+.modal-content {
+  max-width: 1000px;
+}
+
+.recipe-card .recipe-actions {
+  position: static;
+  padding: 0 16px 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}

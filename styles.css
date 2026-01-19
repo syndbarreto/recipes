@@ -1,5 +1,4 @@
-/* RESET / BASE APP */
-
+/* BASE */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,12 +6,21 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: #f4f5f7;
   color: #111827;
 }
 
-/* Brand colors */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cores da marca */
 :root {
   --brand-purple: #3c1e3f;
   --brand-pink: #d84f80;
@@ -20,18 +28,18 @@ body {
   --text-muted: #6b7280;
 }
 
-/* HEADER */
+/* CABEÇALHO */
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 40px;
-  background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: #ffffff;
 }
 
 .header-left {
@@ -43,6 +51,54 @@ body {
 .logo-text {
   font-weight: 700;
   font-size: 20px;
+}
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  background: #f3f4f6;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(60, 30, 63, 0.35);
+  outline-offset: 2px;
+}
+
+.nav-toggle-icon {
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #111827;
+  border-radius: 2px;
+}
+
+.nav-toggle-icon::before {
+  top: 0;
+  box-shadow: 0 5px 0 0 #111827;
+}
+
+.nav-toggle-icon::after {
+  bottom: 0;
 }
 
 .header-nav {
@@ -86,7 +142,7 @@ body {
   font-weight: 500;
 }
 
-/* Outline variant used by Logout button */
+/* Variante contorno (botão Logout) */
 .header-right .btn.btn-outline {
   background: transparent;
   color: #111827;
@@ -112,6 +168,40 @@ body {
 
 .btn-secondary:hover {
   background: #e5e7eb;
+}
+
+/* MENU (hambúrguer) em telas pequenas */
+@media (max-width: 900px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    padding: 10px 16px 14px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header.is-nav-open .header-nav {
+    display: flex;
+  }
+
+  .header-nav .nav-link {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
 }
 
 /* HERO (APENAS NA PÁGINA DE RECEITAS) */
@@ -360,7 +450,6 @@ body {
   .header {
     padding: 12px 16px;
   }
-
   .hero {
     padding: 40px 16px 60px;
   }
@@ -395,7 +484,7 @@ body {
 
 .recipe-actions {
   position: absolute;
-  top: 168px; /* image height (180px) minus half the button (36px/2) */
+  top: 168px; 
   right: 14px;
   padding: 0;
   z-index: 2;
@@ -410,10 +499,10 @@ body {
   justify-content: center;
   border: 1px solid #e5e7eb;
   background: #ffffff;
-  color: #9ca3af; /* icon color */
+  color: #9ca3af;
   cursor: pointer;
   transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  font-size: 0; /* hide the heart character in HTML */
+  font-size: 0;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
 }
 
@@ -444,16 +533,16 @@ body {
 }
 
 .recipe-actions .like-btn.liked {
-  color: #f59e0b; /* amber */
-  background: #fff7ed; /* amber-50 */
-  border-color: #fdba74; /* amber-300 */
+  color: #f59e0b;
+  background: #fff7ed;
+  border-color: #fdba74;
 }
 
 .recipe-actions .like-btn:active {
   transform: scale(0.97);
 }
 
-/* MODAL */
+/* JANELA MODAL */
 
 .modal.hidden {
   display: none;
@@ -479,7 +568,8 @@ body {
   background: #ffffff;
   border-radius: 24px;
   max-width: 900px;
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 16px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 25px 60px rgba(15, 23, 42, 0.24);
@@ -530,21 +620,21 @@ body {
 .tag-info {
   position: relative;
   background: #f9fafb;
-  padding: 8px 12px 8px 50px; /* more space between icon and text */
+  padding: 8px 12px 8px 50px;
   border-radius: 12px;
   border: 1px solid #eef2f7;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
-/* icon glyph */
+/* Ícone */
 .tag-info::after {
   content: "";
   position: absolute;
   left: 12px;
   top: 8px;
-  bottom: 8px; /* icon height equals chip height minus vertical padding */
-  aspect-ratio: 1; /* keep icon square */
-  background-color: #6b7280; /* overridden below */
+  bottom: 8px;
+  aspect-ratio: 1;
+  background-color: #6b7280;
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-position: center;
@@ -553,14 +643,14 @@ body {
   mask-repeat: no-repeat;
 }
 
-/* Tempo de Preparo icon (clock) */
+/* Ícone do tempo de preparo */
 .modal-tags .tag-info:nth-child(1)::after {
   background-color: var(--brand-pink);
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-14a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm1 6.17V8h-2v5h5v-2h-3z"/></svg>');
   mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-14a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm1 6.17V8h-2v5h5v-2h-3z"/></svg>');
 }
 
-/* Dificuldade icon (trend up) */
+/* Ícone da dificuldade */
 .modal-tags .tag-info:nth-child(2)::after {
   background-color: #770a9e;
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M3 17h2.5l5-5 3 3 6.5-6.5V11H22V4h-7v1.5h2.5L13 10.5 10 7.5 3 15v2z"/></svg>');
@@ -607,7 +697,7 @@ body {
   color: var(--brand-pink);
 }
 
-/* ingredientes: green dot bullets */
+/* Ingredientes: marcadores */
 .ingredientes-list {
   list-style: none;
   padding-left: 0;
@@ -632,7 +722,7 @@ body {
   background: #770a9e;
 }
 
-/* preparo: numbered orange badges */
+/* Preparo: numeração */
 .preparo-list {
   list-style: none;
   counter-reset: step;
@@ -656,8 +746,8 @@ body {
   width: 26px;
   height: 26px;
   border-radius: 999px;
-  background: rgba(215, 79, 128, 0.11); /* amber-50 */
-  color: var(--brand-pink); /* amber-600 */
+  background: rgba(215, 79, 128, 0.11);
+  color: var(--brand-pink);
   font-weight: 700;
   font-size: 13px;
   display: inline-flex;
@@ -665,7 +755,7 @@ body {
   justify-content: center;
 }
 
-/* feedback */
+/* Avaliação e comentários */
 
 .modal-feedback {
   margin-top: 24px;

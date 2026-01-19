@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Criar nova receita - Saborify</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="./criar.css">
+</head>
+<body class="criar-page">
+
+  <!-- Cabeçalho comum -->
+  <header class="header">
+    <div class="header-left">
+      <span class="logo-text">Saborify</span>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-outline" onclick="window.location.href='../../index.html'">Voltar</button>
+      <button class="btn btn-outline" onclick="window.location.href='../login/login.html'">Logout</button>
+    </div>
+  </header>
+
+  <!-- FUNDO GRADIENTE -->
+  <section class="criar-hero"></section>
+
+  <!-- CARTÃO BRANCO -->
+  <section class="criar-container">
+    <h1 class="criar-title">Crie uma nova receita</h1>
+
+    <form id="criarForm" class="criar-form" onsubmit="return false;">
+      <!-- COLUNA ESQUERDA -->
+      <div class="form-left">
+        <label class="form-label" for="titulo">Título:</label>
+        <input type="text" id="titulo" required placeholder="Nome da receita">
+
+        <label class="form-label" for="descricao">Descrição:</label>
+        <textarea id="descricao" rows="3" placeholder="Breve descrição da receita" required></textarea>
+
+        <label class="form-label" for="ingredientes">Ingredientes:</label>
+        <textarea id="ingredientes" rows="5"
+          placeholder="Ex: 2 ovos, 200g de farinha, 100ml de leite..."
+          required></textarea>
+
+        <label class="form-label" for="preparo">Modo de preparo:</label>
+        <textarea id="preparo" rows="6"
+          placeholder="Descreva o passo a passo do preparo..."
+          required></textarea>
+
+        <label class="form-label" for="tempo">Tempo de preparo:</label>
+        <select id="tempo" required>
+          <option value="">Selecione o tempo:</option>
+          <option value="10">Até 10 min</option>
+          <option value="20">Até 20 min</option>
+          <option value="30">Até 30 min</option>
+          <option value="40">Até 40 min</option>
+          <option value="60">Até 1 hora</option>
+          <option value="120">Até 2 horas</option>
+        </select>
+
+        <label class="form-label" for="tipo">Tipo de prato:</label>
+        <select id="tipo" required>
+          <option value="">Selecione:</option>
+          <option value="entrada">Entrada</option>
+          <option value="principal">Prato principal</option>
+          <option value="sobremesa">Sobremesa</option>
+        </select>
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <div class="form-right">
+        <label class="form-label" for="imagem">URL da imagem da receita:</label>
+        <input type="url" id="imagem"
+          placeholder="https://exemplo.com/minha-receita.jpg">
+
+        <div class="preview-box">
+          <img id="previewImagem"
+               src="https://media.istockphoto.com/id/2192249215/vector/multimedia-and-images-line-icon.jpg?s=612x612&w=0&k=20&c=FP9D-soDVdScmtth8HYHZ0JSfnOxVYpM6RrWgFHi3u8="
+               alt="Preview da imagem">
+        </div>
+      </div>
+    </form>
+
+    <button id="salvarBtn" class="salvar-btn">Salvar receita</button>
+    <p id="mensagemSalvar" class="mensagem-salvar"></p>
+  </section>
+
+  <script src="../../utils.js"></script>
+  <script src="./criar.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body.criar-page {
+  background: #fafafa;
+  color: #111827;
+}
+
+/* GRADIENTE */
+.criar-hero {
+  height: 260px;
+  background: linear-gradient(135deg, #3c1e3f, #d84f80);
+}
+
+/* CARTÃO BRANCO */
+.criar-container {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  margin: -120px auto 40px;
+  background: #ffffff;
+  padding: 32px 40px 40px;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+}
+
+.criar-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* FORM */
+.criar-form {
+  display: flex;
+  gap: 32px;
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-left {
+  flex: 2;
+}
+
+.form-right {
+  flex: 1;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #374151;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* preview da imagem */
+.preview-box {
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* BOTÃO SALVAR */
+.salvar-btn {
+  display: block;
+  margin: 24px auto 0;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #3c1e3f, #d84f80);
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.mensagem-salvar {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 860px) {
+  .criar-container {
+    width: 92%;
+    padding: 24px 20px 30px;
+  }
+
+  .criar-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .criar-hero {
+    height: 210px;
+  }
+
+  .criar-container {
+    margin: -90px auto 28px;
+    padding: 18px 14px 20px;
+    border-radius: 18px;
+  }
+
+  .criar-form {
+    gap: 18px;
+  }
+
+  .salvar-btn {
+    width: 100%;
+    max-width: 420px;
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gerir Receitas - Saborify</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left"><span class="logo-text">Saborify</span></div>
+      <div class="header-right">
+        <button class="btn btn-outline" onclick="window.location.href='../../index.html'">Voltar</button>
+        <button class="btn btn-outline" id="btnLogout">Logout</button>
+      </div>
+    </header>
+
+    <main class="recipes-section">
+      <div class="recipes-header">
+        <h1 class="admin-title">Painel do administrador</h1>
+        <p class="admin-subtitle">Gerir receitas</p>
+      </div>
+
+      <h2 class="section-title">Pendentes de aprovação</h2>
+      <div id="adminList" class="recipes-grid"></div>
+
+      <h2 class="section-title" style="margin-top:20px;">Receitas publicadas</h2>
+      <div id="publicadasList" class="recipes-grid"></div>
+    </main>
+
+    <div id="recipeModal" class="modal hidden">
+      <div id="modalOverlay" class="modal-overlay"></div>
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close">&times;</button>
+
+        <div class="modal-header">
+          <img id="modalImage" src="" alt="Imagem da receita" class="modal-image" />
+          <div class="modal-header-text">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescricao" class="modal-descricao"></p>
+
+            <div class="modal-tags">
+              <div class="tag-info">
+                <span class="tag-label">Tempo de preparo</span>
+                <span id="modalTempo" class="tag-value"></span>
+              </div>
+              <div class="tag-info">
+                <span class="tag-label">Dificuldade</span>
+                <span id="modalDificuldade" class="tag-value"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-columns">
+            <div>
+              <h3 class="modal-section-title ingredientes-title">Ingredientes</h3>
+              <ul id="modalIngredientes" class="ingredientes-list"></ul>
+            </div>
+            <div>
+              <h3 class="modal-section-title preparo-title">Modo de Preparo</h3>
+              <ol id="modalPreparo" class="preparo-list"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../utils.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>
